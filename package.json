@@ -1,0 +1,25 @@
+{
+  "name": "sharelove",
+  "version": "1.0.0",
+  "description": "sharelove enables you to  share your favorite songs on spotify in a public playlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoPaMo/sharelove.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoPaMo/sharelove/issues"
+  },
+  "homepage": "https://github.com/MoPaMo/sharelove#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}
