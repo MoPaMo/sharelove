@@ -20,7 +20,18 @@ let db = new sqlite3.Database("./db.db", sqlite3.OPEN_READWRITE, (err) => {
   }
   console.log("Connected to the database.");
 });
+app.get("/login", (req, res)=>{
+  state = 'some-state-of-my-choice';
+  var scopes = ['ugc-image-upload', 'playlist-modify-public', 'user-read-private', 'user-read-email' ,'playlist-modify-public', 'user-library-read'],
 
+
+// Create the authorization URL
+var authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
+
+// https://accounts.spotify.com:443/authorize?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https://example.com/callback&scope=user-read-private%20user-read-email&state=some-state-of-my-choice
+res.redirect(authorizeURL);
+})
+app.get(process.env.cb, (req,res)=>{})
 app.listen(port, function(err) {
   if (err) console.log(err);
   console.log("Server listening on PORT", port);
